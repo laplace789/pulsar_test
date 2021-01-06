@@ -28,8 +28,9 @@ type ClickhouseCfg struct {
 
 //TaskCfg represent task  config
 type TaskCfg struct {
-	Topic    string
-	Earliest bool
+	Topic            string
+	SubscriptionName string
+	Earliest         bool
 }
 
 //Config will get the value from path
@@ -59,6 +60,7 @@ func Config(path string) *ServiceCfg {
 	clickhouse.Port = viper.GetInt("clickhouse.Port")
 
 	task.Topic = viper.GetString("task.Topic")
+	task.SubscriptionName = viper.GetString("task.SubscriptionName")
 	task.Earliest = viper.GetBool("task.Earliest")
 
 	return &ServiceCfg{Pulsar: *pulsar, Clickhouse: *clickhouse, Task: *task}
