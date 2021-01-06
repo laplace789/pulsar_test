@@ -1,9 +1,10 @@
 pulsar:
-  Server:  "192.168.1.142"
+  Server:  "127.0.0.1"
   Port: 6650
 clickhouse:
-  Server: "192.168.1.142"
+  Server: "127.0.0.1"
   Port: 9000
 task:
   Topic: "3345678"
+  SubscriptionName: "test"
   Earliest: false
